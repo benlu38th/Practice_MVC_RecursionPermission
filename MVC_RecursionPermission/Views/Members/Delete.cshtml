@@ -1,0 +1,39 @@
+﻿@model MVC_RecursionPermission.Models.Member
+
+@{
+    ViewBag.Title = "權限人員設定-刪除";
+}
+
+<h2>權限人員設定</h2>
+
+<h3>你確定要刪除這個嗎?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Permission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Permission)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
